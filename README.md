@@ -1,4 +1,4 @@
-<h1 align="center"> DevLinks </h1>
+<h1 align="center"> Barbearia FSW </h1>
 
 <p align="center">
 Desenvolvido durante a FullStack Week para ensino de tecnologias WEB. <br/>
@@ -7,7 +7,6 @@ Desenvolvido durante a FullStack Week para ensino de tecnologias WEB. <br/>
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
 
@@ -45,4 +44,4 @@ Esse projeto está sob a licença MIT.
 
 ---
 
-<a h=ref https://lp.fullstackclub.com.br>  Projeto feito pela FullStack Club  </a> 
+<a href= "https://lp.fullstackclub.com.br">  Projeto feito pela FullStack Club  </a> 
