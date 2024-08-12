@@ -1,4 +1,4 @@
-"use client"
+
 import Image from "next/image"
 import Header from "./_components/header"
 import { Button } from "./_components/ui/button"
@@ -6,12 +6,20 @@ import { Badge } from "./_components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "./_components/ui/avatar"
 import { Card, CardContent } from "./_components/ui/card"
 import { Input } from "./_components/ui/input"
-import { Search } from "lucide-react"
+import { Search , Scissors, Logs } from "lucide-react"
+import { db } from "./_lib/prisma"
+import { log } from "console"
+import BarbershopItem from "./_components/barbershop-item"
 
 
-const Home = () => {
+const Home = async () => {
+
+  const barbershops = await db.barbershop.findMany({})
+  console.log({barbershops})
+
   return <div>
-   <Header/>
+   
+  <Header/>
 
   <div className="p-5">
     <h1 className="text-xl font-bold">Olá, Rafael</h1>
@@ -23,13 +31,20 @@ const Home = () => {
     </div>
   </div>
 
-  <div className="relative w-full h-[150px]">
-  <Image alt="Agende nos melhores com fsw Barber" src="/Banner Pizza.png" fill className="object-contain rounded-xl"/> 
+  <div className="relative mt-6 w-full h-[150px]">
+  <Image alt="Agende nos melhores com fsw Barber" src="/Banner Pizza.png" fill className="object-contain rounded-xl "/> 
   </div>
 
-  <div>
-    <h2 className="font-semibold text-gray-400 p-3 ">AGENDAMENTOS</h2>
+  <div className="mt-6 flex gap-3 p-2 ">
+
+    <Button variant="secondary"> <Scissors/> CABELO </Button>
+    <Button variant="secondary"> BARBA </Button>
+
+
   </div>
+
+  {/* AGENDAMENTOS */}
+  <h2 className="font-semibold text-gray-400 p-3 ">AGENDAMENTOS</h2>
   
   <div>
     <Card>
@@ -57,7 +72,17 @@ const Home = () => {
     </Card>  
   </div>
 
- 
+  {/*RECOMENDADOS*/}
+  <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+   Recomendados 
+  </h2>
+
+  <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+          {barbershops.map((barbershop) => (
+            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+          ))}
+        </div>
+
   </div>
 
 
