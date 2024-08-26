@@ -15,7 +15,7 @@ import BarbershopItem from "./_components/barbershop-item"
 const Home = async () => {
 
   const barbershops = await db.barbershop.findMany({})
-  console.log({barbershops})
+  
 
   return <div>
    
