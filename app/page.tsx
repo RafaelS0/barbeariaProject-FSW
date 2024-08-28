@@ -10,34 +10,10 @@ import { Search , Scissors, Logs } from "lucide-react"
 import { db } from "./_lib/prisma"
 import { log } from "console"
 import BarbershopItem from "./_components/barbershop-item"
+import quickSearchOption from "./_constants/search"
+import BookingItem from "./_components/booking-item"
 
 
-interface QuickSearchOption {
-  imageUrl: string,
-  tilte: string
-}
-
-const quicksearchoption: QuickSearchOption[] = [{
- imageUrl: "/cabelo.svg",
- tilte: "Cabelo"
-},
-{
-  imageUrl: "/barba.svg",
-  tilte:"Barba"
-},
-{imageUrl: "/acabamento.svg",
-  tilte:"Acabamento"
-},
-{imageUrl: "/sobrancelha.svg",
-  tilte:"Sobrancelha"
-},
-{imageUrl: "/massagem.svg",
-  tilte:"Massagem"
-},
-{imageUrl: "/hidratacao.svg",
-  tilte:"Hidratação"
-},
-]
 
 
 const Home = async () => {
@@ -69,43 +45,17 @@ const Home = async () => {
  
    {/* BUSCA RÁPIAD */}
   <div className="mt-6 flex gap-3 p-2  overflow-auto [&::-webkit-scrollbar]:hidden ">
-   {quicksearchoption.map((option)=> (
+   {quickSearchOption.map((option)=> (
     <Button className="gap-2" variant="secondary"  key={option.tilte}> 
     <Image src={option.imageUrl} width={16} height={16} alt={option.tilte}/>
     {option.tilte}
    </Button>
    ))}
-  
    </div>
-
-  {/* AGENDAMENTOS */}
-  <h2 className="font-semibold text-gray-400 p-3 ">AGENDAMENTOS</h2>
-
-  <div>
-    <Card>
-     <CardContent className=" flex justify-between p-0 ">
-          {/*ESQUERDA*/}
-         <div className=" flex flex-col gap-2 py-5 pl-5">
-           <Badge className="w-fit">CONFIRMADO</Badge>
-           <h3>CORTE DE CABELO</h3>
-           <div className="flex items-center gap-2">
-            <Avatar className="h-6 w-6">
-            <AvatarImage src="https://github.com/shadcn.png"/>
-            <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-           <p className="text-sm">Barbearia FSW</p>  
-          </div>
-        </div>
-      
-         {/*DIREITA*/}
-          <div className="flex flex-col items-center justify-center px-5 border-l-2">
-           <p className="text-sm"> Agosto</p>
-           <p className="text-2xl">09</p>
-           <p className="text-sm">20:00</p>
-          </div>
-      </CardContent>
-      </Card>  
-    </div>
+     
+      {/* AGENDAMENTOS */}
+      <BookingItem/>
+  
 
      {/*RECOMENDADOS*/}
      <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">  Recomendados  </h2>
