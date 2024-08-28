@@ -24,7 +24,19 @@ const quicksearchoption: QuickSearchOption[] = [{
 {
   imageUrl: "/barba.svg",
   tilte:"Barba"
-}
+},
+{imageUrl: "/acabamento.svg",
+  tilte:"Acabamento"
+},
+{imageUrl: "/sobrancelha.svg",
+  tilte:"Sobrancelha"
+},
+{imageUrl: "/massagem.svg",
+  tilte:"Massagem"
+},
+{imageUrl: "/hidratacao.svg",
+  tilte:"Hidratação"
+},
 ]
 
 
